@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@plugin "daisyui" { themes: certibot; }
+
+@plugin "daisyui/theme" {
+  name: "certibot";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(98% 0.003 247.858);
+  --color-base-200: oklch(96% 0.007 247.896);
+  --color-base-300: oklch(92% 0.013 255.508);
+  --color-base-content: oklch(20% 0 0);
+  --color-primary: oklch(48% 0.243 264.376);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(44% 0.043 257.281);
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(62% 0.214 259.815);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(37% 0.044 257.287);
+  --color-neutral-content: oklch(100% 0 0);
+  --color-info: oklch(70% 0.14 182.503);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(76% 0.233 130.85);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(76% 0.188 70.08);
+  --color-warning-content: oklch(100% 0 0);
+  --color-error: oklch(63% 0.237 25.331);
+  --color-error-content: oklch(100% 0 0);
+  --radius-selector: 2rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 1;
+}
+
+
+body {
+  font-family: Montserrat, sans-serif;
+  background-color: var(--color-base-200);
+}
+
+
+@tailwind base;
+@tailwind utilities;
+
+@layer base {
+  h1 { @apply text-8xl font-bold text-center; }
+  h2 { @apply text-6xl font-bold text-center; }
+  h3 { @apply text-4xl font-bold text-center; }
+  h4 { @apply text-2xl font-bold text-center; }
+  h5 { @apply text-lg text-center; }
+}
+
+
+
+
+.fc .fc-event {
+  background-color: #0023A6;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 2px 4px;
+  font-size: 0.85rem;
+}
+
+
+.fc .fc-today-button {
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+
+.fc .fc-button-primary {
+  background-color: #0023A6;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.fc .fc-day-today {
+  background-color: #dbeafe !important;
+  border: 2px solid #3b82f6 !important;  
+}

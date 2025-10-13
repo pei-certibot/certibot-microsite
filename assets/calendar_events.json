@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "title": "Reunião com equipe",
+    "start": "2025-10-15",
+    "description": "Pequena descrição.",
+    "notes": "**Sprint atual:** andamento e bloqueios.\n- **Backlog:** definir prioridades.\n- [Documentação do projeto](https://github.com/meu-projeto)."
+  },
+  {
+    "id": "2",
+    "title": "Apresentação de projeto",
+    "start": "2025-10-20",
+    "description": "Descrição de placeholder.",
+    "notes": "[x] To-Do 1\n- [x] To-Do 2\n- [&nbsp;&nbsp;] To-Do 3"
+  }
+]
