@@ -1,16 +1,23 @@
 [
   {
     "id": "1",
-    "title": "Reunião com equipe",
-    "start": "2025-10-15",
-    "description": "Pequena descrição.",
-    "notes": "**Sprint atual:** andamento e bloqueios.\n- **Backlog:** definir prioridades.\n- [Documentação do projeto](https://github.com/meu-projeto)."
+    "title": "MS1",
+    "start": "2025-10-28",
+    "description": "Milestone 1",
+    "notes": "Presentation of the lifecycle objectives and calendar for the project."
   },
   {
     "id": "2",
-    "title": "Apresentação de projeto",
-    "start": "2025-10-20",
-    "description": "Descrição de placeholder.",
-    "notes": "[x] To-Do 1\n- [x] To-Do 2\n- [&nbsp;&nbsp;] To-Do 3"
+    "title": "MS2",
+    "start": "2025-11-18",
+    "description": "Milestone 2",
+    "notes": "Presentation of the lifecycle architecture. This milestone is achieved when the architecture has been validated"
+  },
+  {
+    "id": "3",
+    "title": "MS3",
+    "start": "2025-12-16",
+    "description": "Milestone 3",
+    "notes": "Functional Prototype: MVP. Mid-Term presentation with supervisors; peer evaluation"
   }
 ]
