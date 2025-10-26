@@ -1,0 +1,74 @@
+{
+  "milestones": [
+    {
+      "title": "M1-Inception",
+      "url": "/m1-inception",
+      "periods": [
+        {
+          "start": "29/09/2025",
+          "end": "28/10/2025",
+          "tasks": [
+            { "description": "Personas"},
+            { "description": "User Stories"},
+            { "description": "Initial Architecture Diagram"},
+            { "description": "Microsite"},
+            { "description": "Calendar Planning"},
+            { "description": "Mockup", "responsibles": ["Everyone"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "M2-Elaboration",
+      "url": "/m2-elaboration",
+      "periods": [
+        {
+          "start": "28/10/2025",
+          "end": "11/11/2025",
+          "tasks": [
+            { "description": "Data Format Specification"},
+            { "description": "Database Schema Design"},
+            { "description": "Admin Page Implementation"},
+            { "description": "Backend API Implementation"}
+          ]
+        },
+        {
+          "start": "11/11/2025",
+          "end": "18/11/2025",
+          "tasks": [
+            { "description": "LLM calls Specification"}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "M3-Construction",
+      "url": "/m3-construction",
+      "periods": [
+        {
+          "start": "19/11/2025",
+          "end": "16/12/2025",
+          "tasks": [
+            { "description": "Chatbot Implementation"},
+            { "description": "Users Relational Database Design"},
+            { "description": "NLP/LLM Integration"},
+            { "description": "Frontend Implementation"}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "M4-Second Semester Improvement",
+      "url": "/m4-second-semester",
+      "periods": [
+        {
+          "start": "01/01/2025",
+          "end": "30/06/2025",
+          "tasks": [
+            { "description": "TBD" }
+          ]
+        }
+      ]
+    }
+  ]
+}
