@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Chart } from "react-google-charts";
 import CalendarList from "../components/CalendarList.jsx";
-import calendario from "../../assets/calendar.json";
+import calendario from "../../public/assets/calendar.json";
 import { RiBarChartHorizontalFill, RiFileListLine } from "react-icons/ri";
 import ToggleViewButton from "../components/ToggleButton.jsx";
 import BackButton from "../components/BackButton.jsx";
@@ -42,9 +42,12 @@ function Calendar() {
   return (
     <div className="px-4 lg:px-20 py-6">
       <div className="flex mb-8">
-        <div className="w-1/3 relative"><div className="absolute bottom-0"><BackButton /></div></div>
-        <div className="w-1/3"><h2>Calendar</h2></div>
-        <div className="w-1/3 relative"><div className="absolute bottom-0 right-0"><ToggleViewButton variable={showGantt} onClick={() => setShowGantt((v) => !v)} icon1={<RiFileListLine />} icon2={<RiBarChartHorizontalFill />} title1="View as List" title2="View as Gantt Chart" /></div></div>
+        <div className="w-1/3 relative hidden sm:block"><div className="absolute bottom-0"><BackButton /></div></div>
+        <div className="w-1/3">
+            <h2 className="hidden sm:block">Calendar</h2>
+            <h3 className="sm:hidden">Calendar</h3>
+        </div>
+        <div className="w-1/3 relative ml-auto"><div className="absolute bottom-0 right-0"><ToggleViewButton variable={showGantt} onClick={() => setShowGantt((v) => !v)} icon1={<RiFileListLine />} icon2={<RiBarChartHorizontalFill />} title1="View as List" title2="View as Gantt Chart" /></div></div>
       </div>
 
       {showGantt ? ( <Chart chartType="Gantt" data={data} options={options} /> ) : ( <CalendarList data={calendario} /> )}

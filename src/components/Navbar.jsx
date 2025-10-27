@@ -7,10 +7,12 @@ function Navbar() {
         <div className="navbar h-20 px-8 lg:px-32 fixed top-0 left-0 right-0 bg-base-200 z-50">
 
                 <div className="navbar-start">
-                    <a href="/" className="hover:scale-105 transition-transform"> <img src="./assets/text_logo.png" alt="Logo" className="h-17" /> </a>
+                    <a href="/" className="hover:scale-105 transition-transform"> 
+                        <img src="./assets/text_logo.png" alt="Logo" className="h-12 w-auto object-contain" /> 
+                    </a>
                 </div>
 
-            <div className="navbar-end">
+            <div className="navbar-end"></div>
                 <div className="hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 mt-2 text-xl">
                         <li><a href="/team">Team</a></li>
@@ -65,7 +67,6 @@ function Navbar() {
                 </div>
 
             </div>
-        </div>
     )
 }
 

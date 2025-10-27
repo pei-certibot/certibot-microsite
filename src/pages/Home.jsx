@@ -5,14 +5,19 @@ function Home() {
 
     return(
         <div>
-            <div className="flex flex-col lg:flex-row w-full mt-10">
-                <div className="w-full lg:w-[40%] p-8 md:p-16 lg:pt-24 lg:pl-48 cursor-default">
+            <div className="flex flex-col md:flex-row w-full mt-10">
+                <div className="md:hidden w-full md:w-[40%] p-8 md:p-16 md:pt-24 md:pl-48 cursor-default">
+                    <h3 className="font-extrabold text-left">Where AI Meets</h3>
+                    <h2 className="font-black pb-2">Authenticity</h2>
+                </div>
+
+                <div className="hidden md:block  w-full md:w-[40%] p-8 md:p-16 md:pt-24 md:pl-48 cursor-default">
                     <h2 className="font-extrabold text-left">Where AI Meets</h2>
                     <h1 className="font-black pb-2 hover:text-blue-800 transition-colors duration-300">Authenticity</h1>
-                    <h4 className="text-left">Simplifying compliance,</h4>
-                    <h4 className="text-left">empowering your organization</h4>
+                    <h4 className="text-left">An AI-powered assistant that helps organizations implement, verify, and manage compliance with standards automatically.</h4>
                 </div>
-                <div className="w-full lg:w-[60%] px-8 md:px-16 lg:px-24">
+
+                <div className="w-full md:w-[60%] px-8 md:px-16 lg:px-24">
                     <img 
                         src="../assets/art.png" 
                         alt="CertiBot verification illustration" 
