@@ -7,7 +7,7 @@ function Team() {
         <div>
             <div className="p-8">
             <div className="flex mb-8 px-8">
-                <div className="w-1/3 relative"><div className="absolute bottom-0"><BackButton /></div></div>
+                <div className="w-1/3 relative hidden sm:block"><div className="absolute bottom-0"><BackButton /></div></div>
                 <div className="w-1/3">
                     <h2 className="hidden sm:block">Our Team</h2>
                     <h3 className="sm:hidden">Our Team</h3>
