@@ -6,15 +6,15 @@ function Navbar() {
     return(
         <div className="navbar h-20 px-8 lg:px-32 fixed top-0 left-0 right-0 bg-base-200 z-50">
 
-                <div className="navbar-start">
-                    <a href="/" className="hover:scale-105 transition-transform"> 
-                        <img src="./assets/text_logo.png" alt="Logo" className="h-12 w-auto object-contain" /> 
-                    </a>
-                </div>
+            <div className="navbar-start flex-shrink-0">
+                <a href="/" className="hover:scale-105 transition-transform"> 
+                    <img src="./assets/text_logo.png" alt="Logo" className="h-12 w-auto object-contain" /> 
+                </a>
+            </div>
 
-            <div className="navbar-end"></div>
+            <div className="navbar-end flex items-center flex-nowrap">
                 <div className="hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 mt-2 text-xl">
+                    <ul className="menu menu-horizontal px-1 mt-2 text-xl flex-nowrap whitespace-nowrap">
                         <li><a href="/team">Team</a></li>
                         <li><a href="/calendar">Calendar</a></li>
                         <li>
@@ -34,7 +34,7 @@ function Navbar() {
                             </details>
                         </li>
                         {/* <li><a href="#" className="mt-1 mx-1" title="Figma" target="_blank" rel="noopener noreferrer"><SiFigma/ ></a></li> */}
-                        <li><a href="https://github.com/pei-certibot" className="mt-1 mx-1" title="Github" target="_blank" rel="noopener noreferrer"><SiGithub /></a></li>
+                        <li><a href="https://github.com/pei-certibot" className="mt-1 mx-1 flex-shrink-0" title="Github" target="_blank" rel="noopener noreferrer"><SiGithub /></a></li>
                     </ul>
                 </div>
 
@@ -42,7 +42,7 @@ function Navbar() {
                 <div className="flex items-center lg:hidden">
                     {/* <a href="#" className="mx-2 text-xl pr-2" title="Jira" target="_blank" rel="noopener noreferrer"><SiJira/ ></a> */}
                     {/* <a href="#" className="mx-2 text-xl pr-2" title="Figma" target="_blank" rel="noopener noreferrer"><SiFigma/ ></a> */}
-                    <a href="https://github.com/pei-certibot" className="mx-2 text-xl" title="Github" target="_blank" rel="noopener noreferrer"><SiGithub /></a>
+                    <a href="https://github.com/pei-certibot" className="mx-2 text-xl flex-shrink-0" title="Github" target="_blank" rel="noopener noreferrer"><SiGithub /></a>
 
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost text-2xl text-secondary">  <RiMenuLine /> </div>
@@ -65,8 +65,8 @@ function Navbar() {
                         </ul>
                     </div>
                 </div>
-
             </div>
+        </div>
     )
 }
 
