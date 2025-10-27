@@ -32,14 +32,14 @@
       "periods": [
         {
           "start": "28/10/2025",
-          "end": "11/11/2025",
+          "end": "08/11/2025",
           "tasks": [
             { "description": "Refine High-Level Architecture"},
             { "description": "Refine Mockup Sketch", "responsibles": ["Everyone"] }
           ]
         },
         {
-          "start": "11/11/2025",
+          "start": "08/11/2025",
           "end": "18/11/2025",
           "tasks": [
             { "description": "Define Knowledge Database Structure"},
@@ -77,8 +77,8 @@
       "url": "/m4-transition",
       "periods": [
         {
-          "start": "01/01/2025",
-          "end": "30/06/2025",
+          "start": "01/01/2026",
+          "end": "30/06/2026",
           "tasks": [
             { "description": "TBD" },
             {"description": "Define API endpoints for the Norms Review service"},
