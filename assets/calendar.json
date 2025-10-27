@@ -10,10 +10,13 @@
           "tasks": [
             { "description": "Personas"},
             { "description": "User Stories"},
-            { "description": "Initial Architecture Diagram"},
+            { "description": "Functional Requirements"},
+            { "description": "Context / State of the Art Analysis"},
             { "description": "Microsite"},
             { "description": "Calendar Planning"},
-            { "description": "Mockup", "responsibles": ["Everyone"] }
+            { "description": "Initial Mockup Sketch", "responsibles": ["Everyone"] },
+            { "description": "Presentation" }
+
           ]
         }
       ]
@@ -26,10 +29,10 @@
           "start": "28/10/2025",
           "end": "11/11/2025",
           "tasks": [
+            { "description": "Refine High-Level Architecture"},
+            { "description": "Refine Mockup Sketch", "responsibles": ["Everyone"] },
             { "description": "Data Format Specification"},
-            { "description": "Database Schema Design"},
-            { "description": "Admin Page Implementation"},
-            { "description": "Backend API Implementation"}
+            { "description": "Database Schema Design"}
           ]
         },
         {
@@ -50,16 +53,16 @@
           "end": "16/12/2025",
           "tasks": [
             { "description": "Chatbot Implementation"},
-            { "description": "Users Relational Database Design"},
             { "description": "NLP/LLM Integration"},
-            { "description": "Frontend Implementation"}
+            { "description": "Chatbot History Format / Storage"},
+            { "description": "Users Info Relational Database Design"}
           ]
         }
       ]
     },
     {
-      "title": "M4-Second Semester Improvement",
-      "url": "/m4-second-semester",
+      "title": "M4-Transition",
+      "url": "/m4-transition",
       "periods": [
         {
           "start": "01/01/2025",

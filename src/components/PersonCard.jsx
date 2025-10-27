@@ -2,7 +2,7 @@ import { SiLinkedin, SiGithub, SiMaildotru } from "react-icons/si";
 
 function Card({ img, name, nmec, linkedin, github, email }) {
     return (
-        <div className="card bg-base-100 shadow-sm transition duration-300 hover:shadow-[0_0_14px_3px_rgba(37,99,235,0.35)] hover:bg-opacity-70 hover:backdrop-blur-md hover:scale-105 hover:border-blue-600" >
+        <div className="card bg-base-100 shadow-sm transition duration-300 hover:bg-opacity-70 hover:backdrop-blur-md hover:scale-105" >
             <figure>
                 <img src={img} alt="Picture" className="hover:scale-110 transition-transform duration-300 rounded-t-xl" />
             </figure>

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router'
 
 import Home from './pages/Home.jsx'
@@ -11,7 +10,7 @@ function App() {
 
   return (
     <div className="min-h-screen pt-24">
-      <BrowserRouter>
+      <BrowserRouter  >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/calendar" element={<Calendar />} />
