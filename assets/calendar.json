@@ -6,17 +6,22 @@
       "periods": [
         {
           "start": "29/09/2025",
-          "end": "28/10/2025",
+          "end": "14/10/2025",
           "tasks": [
             { "description": "Personas"},
             { "description": "User Stories"},
+            { "description": "State of the Art Analysis"},
+            { "description": "Microsite"}
+          ]
+        },
+        {
+          "start": "14/10/2025",
+          "end": "28/10/2025",
+          "tasks": [
             { "description": "Functional Requirements"},
-            { "description": "Context / State of the Art Analysis"},
-            { "description": "Microsite"},
-            { "description": "Calendar Planning"},
             { "description": "Initial Mockup Sketch", "responsibles": ["Everyone"] },
+            { "description": "Calendar Planning"},
             { "description": "Presentation" }
-
           ]
         }
       ]
@@ -30,16 +35,15 @@
           "end": "11/11/2025",
           "tasks": [
             { "description": "Refine High-Level Architecture"},
-            { "description": "Refine Mockup Sketch", "responsibles": ["Everyone"] },
-            { "description": "Data Format Specification"},
-            { "description": "Database Schema Design"}
+            { "description": "Refine Mockup Sketch", "responsibles": ["Everyone"] }
           ]
         },
         {
           "start": "11/11/2025",
           "end": "18/11/2025",
           "tasks": [
-            { "description": "LLM calls Specification"}
+            { "description": "Define Knowledge Database Structure"},
+            { "description": "Leverage LLM to build compliance guidance from norms"}
           ]
         }
       ]
@@ -50,12 +54,20 @@
       "periods": [
         {
           "start": "19/11/2025",
+          "end": "05/12/2025",
+          "tasks": [
+            { "description": "Refine Knowledge Extraction Using LLM"},
+            { "description": "Define API endpoints for the Knowledge extraction service"},
+            { "description": "Define ChatBot API endpoints"}
+          ]
+        },
+        {
+          "start": "05/12/2025",
           "end": "16/12/2025",
           "tasks": [
-            { "description": "Chatbot Implementation"},
-            { "description": "NLP/LLM Integration"},
-            { "description": "Chatbot History Format / Storage"},
-            { "description": "Users Info Relational Database Design"}
+            { "description": "Develop Chatbot Backend and UI"},
+            { "description": "Define Users Relational Database"},
+            { "description": "Chatbot History Format / Storage"}
           ]
         }
       ]
@@ -68,7 +80,12 @@
           "start": "01/01/2025",
           "end": "30/06/2025",
           "tasks": [
-            { "description": "TBD" }
+            { "description": "TBD" },
+            {"description": "Define API endpoints for the Norms Review service"},
+            { "description": "Develop admin norm review page backend" },
+            { "description": "Develop Norm Review UI" },
+            { "description": "Organization Compliance Integration Backend Dev (Dashboards and graphs) and UI" },
+            { "description": "Add additional features..." }
           ]
         }
       ]
