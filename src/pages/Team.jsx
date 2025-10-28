@@ -7,10 +7,10 @@ function Team() {
         <div>
             <div className="p-8">
             <div className="flex mb-8 px-8">
-                <div className="w-1/3 relative hidden sm:block"><div className="absolute bottom-0"><BackButton /></div></div>
-                <div className="w-1/3">
-                    <h2 className="hidden sm:block">Our Team</h2>
-                    <h3 className="sm:hidden">Our Team</h3>
+                <div className="w-1/8 relative hidden sm:block"><div className="absolute bottom-0"><BackButton /></div></div>
+                <div className="w-3/4">
+                    <h2 className="hidden sm:block whitespace-nowrap">Our Team</h2>
+                    <h3 className="sm:hidden whitespace-nowrap">Our Team</h3>
                 </div>
             </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 px-4">

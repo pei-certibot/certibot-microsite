@@ -3,8 +3,8 @@ function Mockup() {
     return (
         <div className="px-4 lg:px-20 h-screen">
             <div className="flex mb-8">
-                <div className="w-1/3 relative hidden sm:block"><div className="absolute bottom-0"><BackButton /></div></div>
-                <div className="w-1/3">
+                <div className="w-1/8 relative hidden sm:block"><div className="absolute bottom-0"><BackButton /></div></div>
+                <div className="w-3/4">
                     <h2 className="hidden sm:block">Mockup</h2>
                     <h3 className="sm:hidden">Mockup</h3>
                 </div>

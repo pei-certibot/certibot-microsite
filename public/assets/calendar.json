@@ -77,10 +77,9 @@
       "url": "/m4-transition",
       "periods": [
         {
-          "start": "01/01/2026",
-          "end": "30/06/2026",
+          "start": "16/12/2025",
+          "end": "TBD",
           "tasks": [
-            { "description": "TBD" },
             {"description": "Define API endpoints for the Norms Review service"},
             { "description": "Develop admin norm review page backend" },
             { "description": "Develop Norm Review UI" },
