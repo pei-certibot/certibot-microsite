@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
 import MarkdownIt from 'markdown-it';
 import BackButton from "../../components/BackButton";
-import pdf from "../../../public/docs/milestone1/CERTIBOT-MS1.pdf";
 import PdfFrame from "../../components/PdfFrame";
 import block from "../../../public/docs/milestone1/milestone1.md?raw"; 
 
 function MS1() {
+  const pdfLink = "https://www.canva.com/design/DAG2mFpzFNM/4uG7MFzYGpscoAPdSYSQbg/view?embed";
+
   const md = useMemo(() => new MarkdownIt(), []);
   const content = useMemo(() => {
     const titleMatch = block.match(/^#\s+(.+)/m);
@@ -28,7 +29,7 @@ function MS1() {
       </div>
 
       <div className="mx-auto lg:w-[90%] h-[calc(100vh-12rem)] mb-12">
-        <PdfFrame path={pdf} title="Milestone 1" />
+        <PdfFrame path={pdfLink} title="Milestone 1" />
       </div>
 
       <section className="documentation-hero text-left min-h-screen flex items-center justify-center pb-24">

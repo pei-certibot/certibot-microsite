@@ -6,10 +6,11 @@ const PdfFrame = ({ path, title = "PDF Viewer" }) => {
       <iframe
         src={path}
         title={title}
+        loading="lazy"
         className="w-full h-full rounded-xl shadow-lg border-0"
-        style={{ minHeight: 0 }}
-        allowFullScreen
-      />
+        allowFullScreen={true}
+        allow="fullscreen">
+      </iframe>
     </div>
   );
 };
