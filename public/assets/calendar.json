@@ -66,18 +66,29 @@
           "start": "19/11/2025",
           "end": "02/12/2025",
           "tasks": [
-            { "description": "Knowledge Extraction", "responsibles": ["Gonçalo Silva", "Filipe Marques"] },
-            { "description": "Norm Review UI" , "responsibles": ["Rodrigo Santos", "Gonçalo Ribau"] },
-            { "description": "Define Knowledge Non-Relational Database", "responsibles": ["António Santos"]}
+            { "description": "Norm Model Definition", "responsibles": ["António Santos", "Gonçalo Silva"]},
+            { "description": "AI Assistant Adapter", "responsibles": ["Filipe Marques"]},
+            { "description": "AI Assistant UI" , "responsibles": ["Rodrigo Santos"] },
+            { "description": "LLM Orchestrator", "responsibles": ["Filipe Marques"]},
+            { "description": "AI Assistant API", "responsibles": ["Gonçalo Ribau"] },
+            { "description": "Knowledge Retriever", "responsibles": ["Filipe Marques"]},
+            { "description": "Norm Review UI" , "responsibles": ["Rodrigo Santos"] },
+            { "description": "LLM Adapter", "responsibles": ["António Santos"]}
           ]
         },
         {
           "start": "02/12/2025",
           "end": "16/12/2025",
           "tasks": [
-            { "description": "Chatbot Implementation", "responsibles": ["Gonçalo Ribau", "Filipe Marques", "Rodrigo Santos"] },
-            { "description": "Users / Authentication Implementation", "responsibles": ["Rodrigo Santos"] },
-            { "description": "Chatbot History / Storage Implementation", "responsibles": ["Gonçalo Silva"] }
+            { "description": "Norm Model Refinement", "responsibles": ["Everyone"] },
+            { "description": "Non Relational Database Integration", "responsibles": ["Gonçalo Silva"] },
+            { "description": "Extraction API", "responsibles": ["António Santos"] },
+            { "description": "Frontend Refactor", "responsibles": ["Rodrigo Santos"] },
+            { "description": "Norm Review API", "responsibles": ["Gonçalo Silva"] },
+            { "description": "Conversations Manager", "responsibles": ["Gonçalo Ribau"] },
+            { "description": "LLM Orchestrator Refinement", "responsibles": ["Filipe Marques"] },
+            { "description": "Frontend - Backend Integration", "responsibles": ["Rodrigo Santos"] },
+            { "description": "Containerization and Deployment Preparation", "responsibles": ["Everyone"] }
           ]
         }
       ]
@@ -90,13 +101,13 @@
           "start": "16/12/2025",
           "end": "TBD",
           "tasks": [
-
-
-
+            {"description": "Authentication Service" },
             {"description": "AI Assistant Service Feature Expansion" },
-            { "description": "Automated Verification of Compliance Service Development" },
-            { "description": "Test Season!" },
-            { "description": "Add additional features..." }
+            {"description": "Automated Compliance Verification Service" },
+            { "description": "Add additional features..." },
+            { "description": "Usability Tests" },
+            { "description": "Students@DETI" },
+            { "description": "Final Presentation Preparation" }
           ]
         }
       ]
