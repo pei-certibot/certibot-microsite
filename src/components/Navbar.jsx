@@ -23,6 +23,7 @@ function Navbar() {
                                 <ul className="absolute right-0 mt-2 w-44 bg-base-100 rounded-box p-2 shadow text-sm z-50">
                                     <li><a href="/m1-inception">MS1: Inception</a></li>
                                     <li><a href="/m2-elaboration">MS2: Elaboration</a></li>
+                                    <li><a href="/m3-construction">MS3: Construction</a></li>
                                 </ul>
                             </details>
                         </li>
@@ -56,6 +57,7 @@ function Navbar() {
                                 <ul className="p-2">
                                     <li><a href="/m1-inception">MS1: Inception</a></li>
                                     <li><a href="/m2-elaboration">MS2: Elaboration</a></li>
+                                    <li><a href="/m3-construction">MS3: Construction</a></li>
                                 </ul>
                             </li>
                             <li>

@@ -2,21 +2,13 @@ import { useMemo, useRef, useEffect, useState } from 'react';
 import MarkdownIt from 'markdown-it';
 import BackButton from "../../components/BackButton";
 import PdfFrame from "../../components/PdfFrame";
-import block from "../../../public/docs/milestone1/milestone1.md?raw";
+import block from "../../../public/docs/milestone3/milestone3.md?raw";
 
-function slugify(str) {
-  return str
-    .toString()
-    .trim()
-    .toLowerCase()
-    .replace(/<[^>]+>/g, '')
-    .replace(/[\s+~`!@#$%^&*()=+[{\]}\\|;:'",<.>/?]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .replace(/-{2,}/g, '-');
-}
+function slugify(str) { return str.toString().trim().toLowerCase().replace(/<[^>]+>/g, '').replace(/[\s+~`!@#$%^&*()=+[{\]}\\|;:'",<.>/?]+/g, '-').replace(/^-+|-+$/g, '').replace(/-{2,}/g, '-') }
 
-function MS1() {
-  const pdfLink = "https://www.canva.com/design/DAG2mFpzFNM/4uG7MFzYGpscoAPdSYSQbg/view?embed";
+function MS3() {
+  const pdfLink = "https://www.canva.com/design/DAG7f7Pou74/aHQFhwv5DFRI3CAAdUllhw/view?embed";
+
 
   const md = useMemo(() => new MarkdownIt({ html: true }), []);
   const { title, html, toc } = useMemo(() => {
@@ -32,10 +24,11 @@ function MS1() {
     const filteredToc = toc.filter(item => item.level >= 1 && item.level <= 3);
 
     const titleMatch = block.match(/^#\s+(.+)/m);
-    const title = titleMatch ? titleMatch[1].trim() : 'Milestone 1';
+    const title = titleMatch ? titleMatch[1].trim() : 'Milestone 3';
 
     return { title, html: htmlWithIds, toc: filteredToc };
   }, [block, md]);
+
 
   const pdfRef = useRef(null);
   const sectionRef = useRef(null);
@@ -51,20 +44,22 @@ function MS1() {
     function update() {
       const asideEl = asideRef.current;
       const pdfEl = pdfRef.current;
-      if (!asideEl) {
-        setShowFixed(false);
-        setFixedLeft(null);
-        return;
-      }
+      if (!asideEl) { setShowFixed(false); setFixedLeft(null); return; }
 
       const aRect = asideEl.getBoundingClientRect();
-      const isAbove = aRect.top < 0;
-      if (!isAbove) { setShowFixed(false); return; }
+      const isAbove = aRect.top < 0; // aside scrolled above viewport
+      if (!isAbove) {
+        setShowFixed(false);
+        return;
+      }
 
       setFixedLeft(Math.round(aRect.left));
 
       let top = 24;
-      if (pdfEl) { const pRect = pdfEl.getBoundingClientRect(); top = Math.max(24, Math.round(pRect.bottom + 8)); }
+      if (pdfEl) {
+        const pRect = pdfEl.getBoundingClientRect();
+        top = Math.max(24, Math.round(pRect.bottom + 8));
+      }
       setFixedTop(top + FLOAT_OFFSET);
       setShowFixed(true);
     }
@@ -72,7 +67,10 @@ function MS1() {
     update();
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
-    return () => { window.removeEventListener('scroll', update); window.removeEventListener('resize', update); };
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
   }, []);
 
   return (
@@ -81,7 +79,7 @@ function MS1() {
 
       <div className="mx-auto w-full">
         <div ref={pdfRef} className="h-[calc(100vh-12rem)] mb-12">
-          <PdfFrame path={pdfLink} title="Milestone 1" />
+          <PdfFrame path={pdfLink} title="Milestone 3" />
         </div>
 
         <section ref={sectionRef} className="documentation-hero text-left pb-24 flex gap-4">
@@ -89,11 +87,7 @@ function MS1() {
             <div className="sticky top-24 pr-2">
               <div className="idx">
                 <nav className="text-sm">
-                  <ul>
-                    {toc.map((item) => (
-                      <li key={item.id} style={{ marginLeft: (item.level - 1) * 16, marginTop: 8, marginBottom: 8, }} > <a href={`#${item.id}`} className="hover:underline"> {item.text} </a> </li>
-                    ))}
-                  </ul>
+                  <ul> {toc.map((item) => ( <li key={item.id}  style={{ marginLeft: (item.level - 1) * 16, marginTop: 8, marginBottom: 8, }}> <a href={`#${item.id}`} className="hover:underline">{item.text}</a> </li> ))} </ul>
                 </nav>
               </div>
             </div>
@@ -120,4 +114,4 @@ function MS1() {
   );
 }
 
-export default MS1;
+export default MS3;
