@@ -1,5 +1,15 @@
-import { SiJira, SiGithub, SiFigma } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
 import { RiMenuLine } from "react-icons/ri";
+import { milestoneRoutes } from "../config/milestones";
+
+const navLinks = [
+    { href: "/team", label: "Team" },
+    { href: "/calendar", label: "Calendar" },
+];
+
+const documentationLinks = [
+    { href: "/mockup", label: "Mockup" },
+];
 
 function Navbar() {
 
@@ -15,15 +25,16 @@ function Navbar() {
             <div className="navbar-end flex items-center flex-nowrap">
                 <div className="hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 mt-2 text-xl flex-nowrap whitespace-nowrap">
-                        <li><a href="/team">Team</a></li>
-                        <li><a href="/calendar">Calendar</a></li>
+                        {navLinks.map((item) => (
+                            <li key={item.href}><a href={item.href}>{item.label}</a></li>
+                        ))}
                         <li>
                             <details className="relative">
                                 <summary className="cursor-pointer select-none">Milestones</summary>
                                 <ul className="absolute right-0 mt-2 w-44 bg-base-100 rounded-box p-2 shadow text-sm z-50">
-                                    <li><a href="/m1-inception">MS1: Inception</a></li>
-                                    <li><a href="/m2-elaboration">MS2: Elaboration</a></li>
-                                    <li><a href="/m3-construction">MS3: Construction</a></li>
+                                    {milestoneRoutes.map((milestone) => (
+                                        <li key={milestone.path}><a href={milestone.path}>{milestone.navLabel}</a></li>
+                                    ))}
                                 </ul>
                             </details>
                         </li>
@@ -31,7 +42,9 @@ function Navbar() {
                             <details className="relative">
                                 <summary className="cursor-pointer select-none">Documentation</summary>
                                 <ul className="absolute right-0 mt-2 w-40 bg-base-100 rounded-box p-2 shadow text-sm z-50">
-                                    <li><a href="/mockup">Mockup</a></li>
+                                    {documentationLinks.map((item) => (
+                                        <li key={item.href}><a href={item.href}>{item.label}</a></li>
+                                    ))}
                                 </ul>
                             </details>
                         </li>
@@ -49,21 +62,24 @@ function Navbar() {
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost text-2xl text-secondary">  <RiMenuLine /> </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-60 mt-3 w-52 p-2 shadow">
-                            <li><a href="/team">Team</a></li>
-                            <li><a href="/calendar">Calendar</a></li>
+                            {navLinks.map((item) => (
+                                <li key={item.href}><a href={item.href}>{item.label}</a></li>
+                            ))}
                             {/* <li><a>Meetings</a></li> */}
                             <li>
                                 <a className="cursor-default hover:bg-base-100">Milestones</a>
                                 <ul className="p-2">
-                                    <li><a href="/m1-inception">MS1: Inception</a></li>
-                                    <li><a href="/m2-elaboration">MS2: Elaboration</a></li>
-                                    <li><a href="/m3-construction">MS3: Construction</a></li>
+                                    {milestoneRoutes.map((milestone) => (
+                                        <li key={milestone.path}><a href={milestone.path}>{milestone.navLabel}</a></li>
+                                    ))}
                                 </ul>
                             </li>
                             <li>
                                 <a className="cursor-default hover:bg-base-100">Documentation</a>
                                 <ul className="p-2">
-                                <li><a href="/mockup">Mockup</a></li>
+                                {documentationLinks.map((item) => (
+                                    <li key={item.href}><a href={item.href}>{item.label}</a></li>
+                                ))}
                                 </ul>
                             </li>
                         </ul>
