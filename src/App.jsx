@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx'
 import Calendar from './pages/Calendar.jsx'
 import Team from './pages/Team.jsx'
 import Mockup from './pages/Mockup.jsx'
+import TermsAndConditions from './pages/TermsAndConditions.jsx'
 import MilestonePage from './components/MilestonePage.jsx'
 import { milestoneRoutes } from './config/milestones.js'
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/team" element={<Team />} />
           <Route path="/mockup" element={<Mockup />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           {milestoneRoutes.map((milestone) => (
             <Route
               key={milestone.path}

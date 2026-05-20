@@ -9,6 +9,7 @@ const navLinks = [
 
 const documentationLinks = [
     { href: "/mockup", label: "Mockup" },
+    { href: "/terms-and-conditions", label: "Terms & Conditions" },
 ];
 
 function Navbar() {

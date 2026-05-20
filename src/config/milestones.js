@@ -3,6 +3,8 @@ import milestone2md from '../../public/docs/milestone2/milestone2.md?raw';
 import milestone3md from '../../public/docs/milestone3/milestone3.md?raw';
 import milestone4md from '../../public/docs/milestone4/milestone4.md?raw';
 import milestone5md from '../../public/docs/milestone5/milestone5.md?raw';
+import milestone6md from '../../public/docs/milestone6/milestone6.md?raw';
+import milestone7md from '../../public/docs/milestone7/milestone7.md?raw';
 
 export const milestoneRoutes = [
   {
@@ -39,5 +41,20 @@ export const milestoneRoutes = [
     markdownBlock: milestone5md,
     pdfLink: 'https://www.canva.com/design/DAHEreRY52k/ZaaCepilbDSakor7hmTjOg/view?embed',
     pdfTitle: 'Milestone 2.2',
+  },
+  {
+    path: '/m6-legal-requirements',
+    navLabel: 'MS 2.3: Legal Req.',
+    markdownBlock: milestone6md,
+    pdfLink: 'https://www.canva.com/design/DAHIhZW8BEM/qq9gZDCLn2rDzKiUs9Pq1g/view?embed',
+    pdfTitle: 'Milestone 2.3',
+  },
+  {
+    path: '/m7-system-component-validation',
+    navLabel: 'MS 2.4: Syst. Val.',
+    markdownBlock: milestone7md,
+    pdfLink: 'https://www.canva.com/design/DAHJ1zM18OY/nFeAPg7Sm_Ef00E0DXTaXw/view?embed',
+    pdfTitle: 'Milestone 2.4',
   }
 ];
+

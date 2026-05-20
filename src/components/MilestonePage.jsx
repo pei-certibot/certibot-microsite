@@ -97,9 +97,11 @@ function MilestonePage({ markdownBlock, pdfLink, pdfTitle = 'Milestone' }) {
       <BackButton />
 
       <div className="mx-auto w-full">
-        <div ref={pdfRef} className="h-[calc(100vh-12rem)] mb-12">
-          <PdfFrame path={pdfLink} title={frameTitle} />
-        </div>
+        {pdfLink && (
+          <div ref={pdfRef} className="h-[calc(100vh-12rem)] mb-12">
+            <PdfFrame path={pdfLink} title={frameTitle} />
+          </div>
+        )}
 
         <section className="documentation-hero text-left pb-24 flex gap-4">
           <aside ref={asideRef} className="hidden md:block self-start">
