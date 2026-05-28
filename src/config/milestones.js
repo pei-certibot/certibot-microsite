@@ -5,6 +5,7 @@ import milestone4md from '../../public/docs/milestone4/milestone4.md?raw';
 import milestone5md from '../../public/docs/milestone5/milestone5.md?raw';
 import milestone6md from '../../public/docs/milestone6/milestone6.md?raw';
 import milestone7md from '../../public/docs/milestone7/milestone7.md?raw';
+import milestone8md from '../../public/docs/milestone8/milestone8.md?raw';
 
 export const milestoneRoutes = [
   {
@@ -55,6 +56,13 @@ export const milestoneRoutes = [
     markdownBlock: milestone7md,
     pdfLink: 'https://www.canva.com/design/DAHJ1zM18OY/nFeAPg7Sm_Ef00E0DXTaXw/view?embed',
     pdfTitle: 'Milestone 2.4',
+  },
+  {
+    path: '/m8-videos-poster',
+    navLabel: 'MS 2.5: Videos + Poster',
+    markdownBlock: milestone8md,
+    pdfLink: 'https://www.canva.com/design/DAHKtvAwoJ4/V2XmQU2I1bfn4PrMHnCOkg/view?embed',
+    pdfTitle: 'Milestone 2.5',
   }
 ];
 
