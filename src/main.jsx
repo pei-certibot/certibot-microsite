@@ -4,11 +4,14 @@ import './index.css'
 import App from './App.jsx'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import { ThemeProvider } from './contexts/theme.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Navbar />
-    <App />
-    <Footer />
+    <ThemeProvider>
+      <Navbar />
+      <App />
+      <Footer />
+    </ThemeProvider>
   </StrictMode>,
 )

@@ -5,10 +5,14 @@ function BackButton() {
         <button
             title="Homepage"
             onClick={() => (window.location.href = "/")}
-            className="inline-flex items-center justify-center w-10 h-10 bg-transparent border text-gray-800 border-gray-800 rounded-full hover:border-blue-800 hover:bg-blue-800 hover:text-white transition">
+            className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-base-300
+                       text-base-content/50 bg-base-100
+                       hover:border-primary/40 hover:text-primary hover:bg-primary/8
+                       transition-colors duration-150 text-lg"
+        >
             <RiArrowLeftSLine />
-        </button>   
-    )
+        </button>
+    );
 }
 
 export default BackButton;

@@ -1,28 +1,81 @@
-import { React } from 'react';
+import { SiGithub } from "react-icons/si";
+import { useTheme } from "../contexts/theme.jsx";
 
 function Footer() {
+    const { isDark } = useTheme();
+
     return (
-        <footer className="footer bg-base-300 py-8 w-full">
-            <div className="w-full max-w-screen-xl mx-auto px-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 w-full">
-                    <nav className="flex flex-col items-center">
-                        <img src="/assets/text_logo.png" alt="Logo" className="h-12 mb-2" />
-                        <p className="text-sm text-gray-400">@ DETI, Universidade de Aveiro</p>
-                    </nav>
-                    
-                    <nav className="flex flex-col items-center">
-                        <h6 className="footer-title text-lg font-medium mb-3">Project Advisors</h6>
-                        <div className="grid grid-cols-2 gap-2 text-center">
-                            <a href="https://github.com/joaorafaelalmeida" target="_blank" rel="noopener noreferrer" className="link link-hover text-gray-400 hover:text-primary">João Almeida</a>
-                            <a href="https://github.com/dferrero17" target="_blank" rel="noopener noreferrer" className="link link-hover text-gray-400 hover:text-primary">Daniel Ferreira</a>
-                            <a href="https://github.com/xL1fer" target="_blank" rel="noopener noreferrer" className="link link-hover text-gray-400 hover:text-primary">Luís Batista</a>
-                            <a href="https://github.com/MarianaAndrad" target="_blank" rel="noopener noreferrer" className="link link-hover text-gray-400 hover:text-primary">Mariana Andrade</a>
+        <footer className="bg-base-300 border-t border-base-300 w-full">
+            {/* Main footer body */}
+            <div className="max-w-screen-xl mx-auto px-8 py-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
+
+                    {/* Brand */}
+                    <div className="flex flex-col gap-3">
+                        <img
+                            src="/assets/text_logo.png"
+                            alt="CertiBot"
+                            className="h-10 w-auto object-contain object-left"
+                            style={isDark ? { filter: "brightness(0) invert(1)" } : undefined}
+                        />
+                        <p className="text-base-content/45 text-sm leading-relaxed">
+                            AI-powered compliance platform.<br />
+                            DETI, Universidade de Aveiro.
+                        </p>
+                        <a
+                            href="https://github.com/pei-certibot"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-base-content/40 hover:text-primary transition-colors text-sm w-fit"
+                        >
+                            <SiGithub className="text-base" />
+                            pei-certibot
+                        </a>
+                    </div>
+
+                    {/* Spacer column */}
+                    <div />
+
+                    {/* Advisors */}
+                    <div className="flex flex-col gap-4">
+                        <p className="text-base-content/40 text-xs font-semibold uppercase tracking-[0.18em]">
+                            Project Advisors
+                        </p>
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                            {[
+                                { name: "João Almeida",    href: "https://github.com/joaorafaelalmeida" },
+                                { name: "Daniel Ferreira", href: "https://github.com/dferrero17" },
+                                { name: "Luís Batista",    href: "https://github.com/xL1fer" },
+                                { name: "Mariana Andrade", href: "https://github.com/MarianaAndrad" },
+                            ].map(({ name, href }) => (
+                                <a
+                                    key={name}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-base-content/50 hover:text-primary text-sm transition-colors duration-150"
+                                >
+                                    {name}
+                                </a>
+                            ))}
                         </div>
-                    </nav>
+                    </div>
+                </div>
+            </div>
+
+            {/* Copyright strip */}
+            <div className="border-t border-base-300/60 px-8 py-4">
+                <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+                    <p className="text-base-content/35 text-xs">
+                        © 2026 CertiBot · DETI, Universidade de Aveiro
+                    </p>
+                    <p className="text-base-content/25 text-xs">
+                        Projeto em Engenharia Informática
+                    </p>
                 </div>
             </div>
         </footer>
-    )
+    );
 }
 
 export default Footer;
