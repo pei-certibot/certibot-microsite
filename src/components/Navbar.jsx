@@ -1,6 +1,7 @@
 import { SiGithub } from "react-icons/si";
-import { RiMenuLine } from "react-icons/ri";
+import { RiMenuLine, RiSunLine, RiMoonLine, RiArrowDownSLine } from "react-icons/ri";
 import { milestoneRoutes } from "../config/milestones";
+import { useTheme } from "../contexts/theme.jsx";
 
 const navLinks = [
     { href: "/team", label: "Team" },
@@ -12,83 +13,167 @@ const documentationLinks = [
     { href: "/terms-and-conditions", label: "Terms & Conditions" },
 ];
 
-function Navbar() {
+const dropdownItemCls =
+    "block px-3 py-2 rounded-lg text-sm text-base-content/65 hover:text-base-content hover:bg-base-content/8 transition-colors duration-150";
 
-    return(
-        <div className="navbar h-20 px-8 lg:px-32 fixed top-0 left-0 right-0 bg-base-200 z-50">
+const dropdownMenuCls =
+    "absolute right-0 top-full mt-1 bg-base-100 border border-base-300 rounded-xl shadow-xl p-1.5 z-50 w-max max-w-[14rem]";
+
+function Navbar() {
+    const { isDark, toggleTheme } = useTheme();
+
+    return (
+        <div className="navbar h-20 px-8 lg:px-32 fixed top-0 left-0 right-0 bg-base-200 border-b border-base-300 z-50">
 
             <div className="navbar-start flex-shrink-0">
-                <a href="/" className="hover:scale-105 transition-transform"> 
-                    <img src="./assets/text_logo.png" alt="Logo" className="h-12 w-auto object-contain" /> 
+                <a href="/" className="hover:opacity-80 transition-opacity duration-200">
+                    <img
+                        src="./assets/text_logo.png"
+                        alt="CertiBot"
+                        className="h-12 w-auto object-contain"
+                        style={{ filter: "brightness(0) saturate(100%) invert(26%) sepia(66%) saturate(2153%) hue-rotate(218deg) brightness(96%)" }}
+                    />
                 </a>
             </div>
 
-            <div className="navbar-end flex items-center flex-nowrap">
-                <div className="hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 mt-2 text-xl flex-nowrap whitespace-nowrap">
-                        {navLinks.map((item) => (
-                            <li key={item.href}><a href={item.href}>{item.label}</a></li>
-                        ))}
-                        <li>
-                            <details className="relative">
-                                <summary className="cursor-pointer select-none">Milestones</summary>
-                                <ul className="absolute right-0 mt-2 w-44 bg-base-100 rounded-box p-2 shadow text-sm z-50">
-                                    {milestoneRoutes.map((milestone) => (
-                                        <li key={milestone.path}><a href={milestone.path}>{milestone.navLabel}</a></li>
-                                    ))}
-                                </ul>
-                            </details>
-                        </li>
-                        <li>
-                            <details className="relative">
-                                <summary className="cursor-pointer select-none">Documentation</summary>
-                                <ul className="absolute right-0 mt-2 w-40 bg-base-100 rounded-box p-2 shadow text-sm z-50">
-                                    {documentationLinks.map((item) => (
-                                        <li key={item.href}><a href={item.href}>{item.label}</a></li>
-                                    ))}
-                                </ul>
-                            </details>
-                        </li>
-                        {/* <li><a href="#" className="mt-1 mx-1" title="Figma" target="_blank" rel="noopener noreferrer"><SiFigma/ ></a></li> */}
-                        <li><a href="https://github.com/pei-certibot" className="mt-1 mx-1 flex-shrink-0" title="Github" target="_blank" rel="noopener noreferrer"><SiGithub /></a></li>
-                    </ul>
+            <div className="navbar-end flex items-center flex-nowrap gap-1">
+
+                {/* ── Desktop ── */}
+                <div className="hidden lg:flex items-center gap-1 text-[0.95rem]">
+                    {navLinks.map((item) => (
+                        <a
+                            key={item.href}
+                            href={item.href}
+                            className="px-3 py-2 rounded-lg text-base-content/65 hover:text-base-content hover:bg-base-content/8 transition-colors duration-150 font-medium"
+                        >
+                            {item.label}
+                        </a>
+                    ))}
+
+                    {/* Milestones dropdown */}
+                    <details className="relative group">
+                        <summary className="flex items-center gap-1 px-3 py-2 rounded-lg text-base-content/65 hover:text-base-content hover:bg-base-content/8 transition-colors duration-150 font-medium cursor-pointer select-none list-none">
+                            Milestones
+                            <RiArrowDownSLine className="text-base transition-transform duration-200 group-open:rotate-180" />
+                        </summary>
+                        <ul className={dropdownMenuCls}>
+                            {milestoneRoutes.map((milestone) => (
+                                <li key={milestone.path}>
+                                    <a href={milestone.path} className={dropdownItemCls}>
+                                        {milestone.navLabel}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </details>
+
+                    {/* Documentation dropdown */}
+                    <details className="relative group">
+                        <summary className="flex items-center gap-1 px-3 py-2 rounded-lg text-base-content/65 hover:text-base-content hover:bg-base-content/8 transition-colors duration-150 font-medium cursor-pointer select-none list-none">
+                            Documentation
+                            <RiArrowDownSLine className="text-base transition-transform duration-200 group-open:rotate-180" />
+                        </summary>
+                        <ul className={dropdownMenuCls}>
+                            {documentationLinks.map((item) => (
+                                <li key={item.href}>
+                                    <a href={item.href} className={dropdownItemCls}>
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </details>
+
+                    <a
+                        href="https://github.com/pei-certibot"
+                        className="p-2 rounded-lg text-base-content/50 hover:text-base-content hover:bg-base-content/8 transition-colors duration-150 ml-1"
+                        title="GitHub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <SiGithub className="text-lg" />
+                    </a>
+
+                    <a
+                        href="https://mednat.ieeta.pt:9062/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-2 px-4 py-1.5 rounded-lg bg-primary text-primary-content text-sm font-semibold hover:opacity-90 transition-opacity duration-150"
+                    >
+                        Try CertiBot
+                    </a>
                 </div>
 
+                {/* Theme toggle */}
+                <button
+                    onClick={toggleTheme}
+                    title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                    className="p-2 rounded-lg text-base-content/50 hover:text-base-content hover:bg-base-content/8 transition-colors duration-150 text-xl ml-1"
+                >
+                    {isDark ? <RiSunLine /> : <RiMoonLine />}
+                </button>
 
+                {/* ── Mobile ── */}
                 <div className="flex items-center lg:hidden">
-                    {/* <a href="#" className="mx-2 text-xl pr-2" title="Jira" target="_blank" rel="noopener noreferrer"><SiJira/ ></a> */}
-                    {/* <a href="#" className="mx-2 text-xl pr-2" title="Figma" target="_blank" rel="noopener noreferrer"><SiFigma/ ></a> */}
-                    <a href="https://github.com/pei-certibot" className="mx-2 text-xl flex-shrink-0" title="Github" target="_blank" rel="noopener noreferrer"><SiGithub /></a>
+                    <a
+                        href="https://mednat.ieeta.pt:9062/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-1.5 rounded-lg bg-primary text-primary-content text-xs font-semibold hover:opacity-90 transition-opacity duration-150 mr-1"
+                    >
+                        Try App
+                    </a>
+                    <a
+                        href="https://github.com/pei-certibot"
+                        className="p-2 text-base-content/50 hover:text-base-content transition-colors text-xl"
+                        title="GitHub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <SiGithub />
+                    </a>
 
                     <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost text-2xl text-secondary">  <RiMenuLine /> </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-60 mt-3 w-52 p-2 shadow">
+                        <div tabIndex={0} role="button" className="btn btn-ghost text-2xl text-base-content/60">
+                            <RiMenuLine />
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="dropdown-content mt-2 w-56 bg-base-100 border border-base-300 rounded-xl shadow-xl p-2 z-60 space-y-0.5"
+                        >
                             {navLinks.map((item) => (
-                                <li key={item.href}><a href={item.href}>{item.label}</a></li>
+                                <li key={item.href}>
+                                    <a href={item.href} className={dropdownItemCls}>{item.label}</a>
+                                </li>
                             ))}
-                            {/* <li><a>Meetings</a></li> */}
-                            <li>
-                                <a className="cursor-default hover:bg-base-100">Milestones</a>
-                                <ul className="p-2">
-                                    {milestoneRoutes.map((milestone) => (
-                                        <li key={milestone.path}><a href={milestone.path}>{milestone.navLabel}</a></li>
-                                    ))}
-                                </ul>
-                            </li>
-                            <li>
-                                <a className="cursor-default hover:bg-base-100">Documentation</a>
-                                <ul className="p-2">
-                                {documentationLinks.map((item) => (
-                                    <li key={item.href}><a href={item.href}>{item.label}</a></li>
+
+                            <li className="pt-1">
+                                <p className="px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-widest text-base-content/35">
+                                    Milestones
+                                </p>
+                                {milestoneRoutes.map((milestone) => (
+                                    <a key={milestone.path} href={milestone.path} className={dropdownItemCls}>
+                                        {milestone.navLabel}
+                                    </a>
                                 ))}
-                                </ul>
+                            </li>
+
+                            <li className="pt-1">
+                                <p className="px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-widest text-base-content/35">
+                                    Documentation
+                                </p>
+                                {documentationLinks.map((item) => (
+                                    <a key={item.href} href={item.href} className={dropdownItemCls}>
+                                        {item.label}
+                                    </a>
+                                ))}
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;

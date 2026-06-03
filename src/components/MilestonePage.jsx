@@ -14,6 +14,33 @@ function slugify(str) {
     .replace(/-{2,}/g, '-');
 }
 
+function TocPanel({ toc }) {
+  return (
+    <div className="idx" style={{ width: '14rem' }}>
+      <div className="idx-header">Contents</div>
+      <div className="idx-scroll">
+        <ul className="space-y-0.5">
+          {toc.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                style={{ paddingLeft: `${0.75 + (item.level - 1) * 0.9}rem` }}
+                className={
+                  item.level === 1
+                    ? 'font-semibold text-base-content/80 hover:text-primary hover:bg-base-content/10 block rounded-lg py-1.5 pr-3 text-sm transition-colors'
+                    : 'text-base-content/55 hover:text-primary hover:bg-base-content/10 block rounded-lg py-1.5 pr-3 text-[0.8rem] transition-colors'
+                }
+              >
+                {item.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 function MilestonePage({ markdownBlock, pdfLink, pdfTitle = 'Milestone' }) {
   const md = useMemo(() => new MarkdownIt({ html: true }), []);
 
@@ -103,67 +130,32 @@ function MilestonePage({ markdownBlock, pdfLink, pdfTitle = 'Milestone' }) {
           </div>
         )}
 
-        <section className="documentation-hero text-left pb-24 flex gap-4">
-          <aside ref={asideRef} className="hidden md:block self-start">
-            <div className="sticky top-24 pr-2">
-              <div className="idx">
-                <nav className="text-sm">
-                  <ul>
-                    {toc.map((item) => (
-                      <li
-                        key={item.id}
-                        style={{
-                          marginLeft: (item.level - 1) * 16,
-                          marginTop: 8,
-                          marginBottom: 8,
-                        }}
-                      >
-                        <a href={`#${item.id}`} className="hover:underline">
-                          {item.text}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </div>
+        <section className="documentation-hero text-left pb-24 flex gap-8">
+          {/* ── TOC sidebar (left) ── */}
+          <aside ref={asideRef} className="hidden lg:block self-start flex-shrink-0">
+            <div className="sticky top-24">
+              <TocPanel toc={toc} />
             </div>
           </aside>
 
+          {/* ── Fixed clone when sidebar scrolls past top ── */}
           {showFixed && fixedLeft != null && (
             <div
-              className="hidden md:block"
+              className="hidden lg:block"
               style={{
                 position: 'fixed',
                 left: `${fixedLeft}px`,
                 top: `${fixedTop}px`,
-                width: '12rem',
                 zIndex: 60,
+                width: '14rem',
               }}
             >
-              <div className="idx">
-                <nav className="text-sm">
-                  <ul>
-                    {toc.map((item) => (
-                      <li
-                        key={item.id}
-                        style={{
-                          marginLeft: (item.level - 1) * 16,
-                          marginTop: 8,
-                          marginBottom: 8,
-                        }}
-                      >
-                        <a href={`#${item.id}`} className="hover:underline">
-                          {item.text}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </div>
+              <TocPanel toc={toc} />
             </div>
           )}
 
-          <div className="markdown-body flex-1">
+          {/* ── Main content (right) ── */}
+          <div className="markdown-body flex-1 min-w-0">
             <div dangerouslySetInnerHTML={{ __html: html }} />
           </div>
         </section>

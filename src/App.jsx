@@ -11,7 +11,7 @@ import { milestoneRoutes } from './config/milestones.js'
 function App() {
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-20">
       <BrowserRouter  >
         <Routes>
           <Route path="/" element={<Home />} />
