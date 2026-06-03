@@ -39,8 +39,8 @@ function CalendarList({ data = { milestones: [] } }) {
                                 <div className="flex-1 space-y-2">
                                     {period.tasks.map((task, tIdx) => (
                                         <div key={tIdx}
-                                             className="flex items-center gap-3 rounded-xl px-4 py-2.5 bg-base-200/50 hover:bg-base-200 transition-colors duration-150">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                                             className="flex items-start gap-3 rounded-xl px-4 py-2.5 bg-base-200/50 hover:bg-base-200 transition-colors duration-150">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0 mt-1.5" />
                                             <span className="text-sm text-base-content/80 flex-1 font-medium">
                                                 {task.description}
                                             </span>

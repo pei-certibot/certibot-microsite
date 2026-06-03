@@ -31,7 +31,7 @@ function Navbar() {
                         src="./assets/text_logo.png"
                         alt="CertiBot"
                         className="h-12 w-auto object-contain"
-                        style={isDark ? { filter: "brightness(0) invert(1)" } : undefined}
+                        style={{ filter: "brightness(0) saturate(100%) invert(26%) sepia(66%) saturate(2153%) hue-rotate(218deg) brightness(96%)" }}
                     />
                 </a>
             </div>
@@ -93,6 +93,15 @@ function Navbar() {
                     >
                         <SiGithub className="text-lg" />
                     </a>
+
+                    <a
+                        href="https://mednat.ieeta.pt:9062/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-2 px-4 py-1.5 rounded-lg bg-primary text-primary-content text-sm font-semibold hover:opacity-90 transition-opacity duration-150"
+                    >
+                        Try CertiBot
+                    </a>
                 </div>
 
                 {/* Theme toggle */}
@@ -106,6 +115,14 @@ function Navbar() {
 
                 {/* ── Mobile ── */}
                 <div className="flex items-center lg:hidden">
+                    <a
+                        href="https://mednat.ieeta.pt:9062/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-1.5 rounded-lg bg-primary text-primary-content text-xs font-semibold hover:opacity-90 transition-opacity duration-150 mr-1"
+                    >
+                        Try App
+                    </a>
                     <a
                         href="https://github.com/pei-certibot"
                         className="p-2 text-base-content/50 hover:text-base-content transition-colors text-xl"

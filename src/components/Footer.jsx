@@ -1,8 +1,6 @@
 import { SiGithub } from "react-icons/si";
-import { useTheme } from "../contexts/theme.jsx";
 
 function Footer() {
-    const { isDark } = useTheme();
 
     return (
         <footer className="bg-base-300 border-t border-base-300 w-full">
@@ -16,7 +14,7 @@ function Footer() {
                             src="/assets/text_logo.png"
                             alt="CertiBot"
                             className="h-10 w-auto object-contain object-left"
-                            style={isDark ? { filter: "brightness(0) invert(1)" } : undefined}
+                            style={{ filter: "brightness(0) saturate(100%) invert(26%) sepia(66%) saturate(2153%) hue-rotate(218deg) brightness(96%)" }}
                         />
                         <p className="text-base-content/45 text-sm leading-relaxed">
                             AI-powered compliance platform.<br />

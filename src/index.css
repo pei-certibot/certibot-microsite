@@ -121,13 +121,13 @@ html { scroll-behavior: smooth; }
 }
 
 .aurora-word {
-  /* Bright vivid version of the aurora colours, clipped to the text shape */
-  background-color: #4f9cf5;           /* fallback if clip is unsupported   */
+  /* Deep vivid colours — visible on white background, clipped to text */
+  background-color: #2563eb;           /* fallback if clip is unsupported   */
   background-image:
-    radial-gradient(circle, #93c5fd 0%, transparent 60%),   /* blue-300   */
-    radial-gradient(circle, #a5b4fc 0%, transparent 60%),   /* indigo-300 */
-    radial-gradient(circle, #67e8f9 0%, transparent 60%),   /* cyan-300   */
-    radial-gradient(circle, #d8b4fe 0%, transparent 60%);   /* purple-300 */
+    radial-gradient(circle, #2563eb 0%, transparent 60%),   /* blue-600   */
+    radial-gradient(circle, #4f46e5 0%, transparent 60%),   /* indigo-600 */
+    radial-gradient(circle, #0891b2 0%, transparent 60%),   /* cyan-600   */
+    radial-gradient(circle, #7c3aed 0%, transparent 60%);   /* violet-600 */
   background-size: 200% 200%, 200% 200%, 200% 200%, 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -154,7 +154,12 @@ html { scroll-behavior: smooth; }
   5%   { transform: rotate(4deg); }
   9%   { transform: rotate(10deg); }
   16%  { transform: rotate(-12deg); }
-  23%  { transform: rotate(360deg); }
+  23%  { transform: rotate(360deg); animation-timing-function: ease-out; }
+  27%  { transform: rotate(370deg); animation-timing-function: ease-in-out; }
+  33%  { transform: rotate(353deg); animation-timing-function: ease-in-out; }
+  37%  { transform: rotate(363deg); animation-timing-function: ease-in-out; }
+  40%  { transform: rotate(358deg); animation-timing-function: ease-in-out; }
+  42%  { transform: rotate(360deg); }
   100% { transform: rotate(360deg); }
 }
 
