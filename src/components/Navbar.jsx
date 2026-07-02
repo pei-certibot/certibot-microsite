@@ -93,15 +93,6 @@ function Navbar() {
                     >
                         <SiGithub className="text-lg" />
                     </a>
-
-                    <a
-                        href="https://mednat.ieeta.pt:9062/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ml-2 px-4 py-1.5 rounded-lg bg-primary text-primary-content text-sm font-semibold hover:opacity-90 transition-opacity duration-150"
-                    >
-                        Try CertiBot
-                    </a>
                 </div>
 
                 {/* Theme toggle */}
@@ -115,14 +106,6 @@ function Navbar() {
 
                 {/* ── Mobile ── */}
                 <div className="flex items-center lg:hidden">
-                    <a
-                        href="https://mednat.ieeta.pt:9062/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-3 py-1.5 rounded-lg bg-primary text-primary-content text-xs font-semibold hover:opacity-90 transition-opacity duration-150 mr-1"
-                    >
-                        Try App
-                    </a>
                     <a
                         href="https://github.com/pei-certibot"
                         className="p-2 text-base-content/50 hover:text-base-content transition-colors text-xl"

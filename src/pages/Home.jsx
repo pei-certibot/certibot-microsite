@@ -104,14 +104,6 @@ function Home() {
             An AI-powered assistant that helps organizations implement, verify,
             and manage compliance with standards automatically.
           </h5>
-          <a
-            href="https://mednat.ieeta.pt:9062/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-content font-semibold text-sm hover:opacity-90 transition-opacity duration-150 w-fit"
-          >
-            Try CertiBot →
-          </a>
         </div>
 
         {/* Text — desktop */}
@@ -135,14 +127,6 @@ function Home() {
             An AI-powered assistant that helps organizations implement, verify,
             and manage compliance with standards automatically.
           </h4>
-          <a
-            href="https://mednat.ieeta.pt:9062/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="animate-fade-up-d3 mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-content font-semibold hover:opacity-90 transition-opacity duration-150 w-fit"
-          >
-            Try CertiBot →
-          </a>
         </div>
 
         {/* Logo — floating, replaces the art.png card */}
